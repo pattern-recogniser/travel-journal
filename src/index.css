@@ -65,4 +65,26 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
+
 }
+header{
+  background-color: #E46460;
+  display: flex;
+  padding: 0 2em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+header > img {
+  height: 25px;
+}
+div > card{
+  display: grid;
+  grid-template-areas: "image location gMap"
+    "image title title"
+    "image duration . "
+    "image description description"
+    ;
+}
+
