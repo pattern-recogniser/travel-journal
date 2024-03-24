@@ -1,20 +1,24 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
+
 export default function Entry(props){
-    console.log(props)
     return (
         <div className="card">
-            <img src={props.item.imageUrl} />
-            <img src="/public/pin.png" />
-            <p>{props.item.location}
-            {props.item.startDate}
-            {props.item.endDate}
-            {props.item.googleMapsUrl}
-            {props.item.title}
-            {props.item.description}
-            </p>
+            <img id="location-img" src={props.item.imageUrl} />
+            <div id="location-div">
+                <p id="location">{props.item.location}</p>
+                <img id="location-icon" src="/public/pin.png" />
+                <a 
+                    href={props.item.googleMapsUrl}>View on Google Maps
+                </a>
+            </div>
 
+            <h2 id="title">{props.item.title}</h2>
+            <h3 id="duration">{props.item.startDate} - {props.item.endDate} </h3>
+            <p id="description">
+                {props.item.description}
+            </p>
         </div>
     )
 }

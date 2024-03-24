@@ -6,67 +6,19 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 750px;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-
-
 }
 header{
   background-color: #E46460;
@@ -78,13 +30,74 @@ header{
 }
 header > img {
   height: 25px;
+
 }
-div > card{
+div > .card{
   display: grid;
-  grid-template-areas: "image location gMap"
-    "image title title"
-    "image duration . "
-    "image description description"
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 30% 1em 1fr 1fr;
+  grid-template-areas: 
+    "image margin location location"
+    "image margin title title"
+    "image margin duration . "
+    "image margin description description"
     ;
+    height: 170px;
+}
+#location-img{
+  grid-area: image;
+  object-fit: cover;
+  height: 170px;
+  width: 100%;
+  border-radius: 1em;
+  padding: 0;
+  margin: 0;
+
+}
+.card > #location-div{
+  grid-area: location;
+  display: flex;
+  align-items: center;
+}
+#location{
+  font-weight: 400;
+  font-size: 0.85em;
+  line-height: 12px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  padding-right: 0.6em;
+}
+.card > #location-link{
+  grid-area: gMap;
+}
+.card > #location-div > a{
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: #918E9B;
+}
+.card > #title{
+  grid-area: title;
+}
+.card  > #duration{
+  grid-area: duration;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.card > #description{
+  grid-area: description;
+
+}
+#location-icon{
+  padding-right: 0.3em;
+  height: 1rem;
 }
 
+.card > #location-img,
+.card > #location-div,
+.card > #location-link,
+.card > #title,
+.card > #duration,
+.card > #description{
+  text-align: left;
+  align-self: center;
+}
